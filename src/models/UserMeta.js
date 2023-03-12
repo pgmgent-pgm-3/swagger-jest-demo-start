@@ -25,7 +25,6 @@ export default new EntitySchema({
     user: {
       target: "User",
       type: "one-to-one",
-      cascade: true,
       joinColumn: {
         name: "user_id",
       },

@@ -23,7 +23,7 @@ export default new EntitySchema({
       target: "Interest",
       type: "many-to-many",
       joinTable: {
-        name: "user_interests",
+        name: "users_interests",
       },
       cascade: true,
     },
