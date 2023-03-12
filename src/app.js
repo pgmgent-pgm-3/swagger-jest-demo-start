@@ -16,6 +16,7 @@ import {
 import {
   deleteObject,
   getObjects,
+  getObject,
   postObject,
   updateObject,
 } from "./controllers/api/object.js";
@@ -48,18 +49,28 @@ app.get("/", home);
 /**
  * API app routes.
  */
-app.get("/api/interest", getInterests);
-app.post("/api/interest", postInterest);
-app.delete("/api/interest/:id", deleteInterest);
-app.put("/api/interest", updateInterest);
+// INTEREST ROUTES
+app.get("/api/interests", getInterests);
+app.get("/api/interests/:id", (req, res, next) =>
+  getObject("User", req, res, next)
+);
+app.post("/api/interests", postInterest);
+app.delete("/api/interests/:id", deleteInterest);
+app.put("/api/interests", updateInterest);
+
+// USER ROUTES
 app.get("/api/users", getUsers);
-app.get("/api/user/:id", (req, res, next) => getObject("User", req, res, next));
-app.post("/api/user", postUser);
-app.get("/api/roles", getRoles);
-app.delete("/api/user/:id", (req, res, next) =>
+app.get("/api/users/:id", (req, res, next) =>
+  getObject("User", req, res, next)
+);
+app.post("/api/users", postUser);
+app.delete("/api/users/:id", (req, res, next) =>
   deleteObject("User", req, res, next)
 );
-app.put("/api/user", (req, res, next) => updateObject("User", req, res, next));
+app.put("/api/users", (req, res, next) => updateObject("User", req, res, next));
+
+// ROLE ROUTES
+app.get("/api/roles", getRoles);
 
 /**
  * Init TypeORM
