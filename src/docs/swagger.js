@@ -1,4 +1,5 @@
-import schemas from './schemas.js';
+import schemas from "./schemas.js";
+import paths from "./paths/index.js";
 
 export default {
   openapi: "3.0.0",
@@ -8,18 +9,18 @@ export default {
     description: "This is an API to call HTTP methods and alter data",
     license: {
       name: "Arteveldehogeschool",
-      url: "https://arteveldehogeschool.be"
-    }
+      url: "https://arteveldehogeschool.be",
+    },
   },
   servers: [
     {
       url: "http://localhost:4000/api",
-      description: "This is the development server"
-    }
+      description: "This is the development server",
+    },
   ],
   tags: [],
-  paths: {},
+  paths,
   components: {
-    schemas
-  }
-}
+    schemas,
+  },
+};
