@@ -1,10 +1,13 @@
+import userResponse from "../responses/users.js";
+
 export default {
-  "/api/users": {
+  "/users": {
     summary: "CRUD with users",
     description: "Get all users in the database",
     get: {
       tags: ["Users"],
       summary: "Get all users",
+      responses: userResponse,
     },
     post: {
       tags: ["Users"],
@@ -19,9 +22,31 @@ export default {
           },
         },
       },
+      responses: userResponse,
     },
     put: {
       tags: ["Users"],
+    },
+  },
+  "/users/{id}": {
+    summary: "Get one user with given id",
+    description: "Get one user with given id",
+    get: {
+      tags: ["Users"],
+      summary: "Get one user with given id",
+      parameters: [
+        {
+          in: "path",
+          name: "id",
+          required: true,
+          schema: {
+            type: "integer",
+            minimum: 1,
+          },
+          description: "ID of the user to get",
+        },
+      ],
+      responses: userResponse,
     },
   },
 };
