@@ -22,9 +22,17 @@ import {
 } from "./controllers/api/object.js";
 import { getUsers, postUser } from "./controllers/api/user.js";
 import { getRoles } from "./controllers/api/role.js";
+import swaggerUi from 'swagger-ui-express';
+import swaggerDefinition from "./docs/swagger.js";
 
 const app = express();
 app.use(express.static("public"));
+
+/**
+ * Adding Swagger Docs
+ */
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 
 /**
  * Handlebars Init
