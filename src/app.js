@@ -85,14 +85,18 @@ app.get("/api/roles", getRoles);
  */
 
 // start the server
-DataSource.initialize()
-  .then(() => {
-    app.listen(process.env.PORT, () => {
-      console.log(
-        `Application is running on http://localhost:${process.env.PORT}/.`
-      );
+if(process.env.NODE_ENV !== "test") {
+  DataSource.initialize()
+    .then(() => {
+      app.listen(process.env.PORT, () => {
+        console.log(
+          `Application is running on http://localhost:${process.env.PORT}/.`
+        );
+      });
+    })
+    .catch(function (error) {
+      console.log("Error: ", error);
     });
-  })
-  .catch(function (error) {
-    console.log("Error: ", error);
-  });
+}
+
+export default app;
