@@ -30,6 +30,36 @@ describe("Interests API tests", () => {
       const response = await request(app).get("/api/interests");
       expect(response.statusCode).toBe(200);
       expect(Array.isArray(response.body)).toBeTruthy();
-    })
+    });
+
+    // POST een nieuwe user die voldoet aan:
+    /*
+      {
+        firstname: "Frederick",
+        lastname: "Roegiers",
+        user_meta: {
+          address: "Invalidenstraat 6",
+          zipCode: "9041",
+          city: "Oostakker",
+        },
+        role: {
+          name: "admin",
+        },
+      }
+    */
+    // Controleer of we in de body ook een id hebben gekregen
+
+    // weet je het niet?
+
+    // vraag het aan ChatGPT om een richting te krijgen
+    // onderzoek de documentatie van supertest:
+    //  - https://www.npmjs.com/package/supertest
+
+    // veel succes!
+
+    test("POST - /api/user", () => {
+
+    });
+
   })
 })
