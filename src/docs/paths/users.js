@@ -27,6 +27,7 @@ export default {
     put: {
       tags: ["Users"],
     },
+
   },
   "/users/{id}": {
     summary: "Get one user with given id",
@@ -48,5 +49,21 @@ export default {
       ],
       responses: userResponse,
     },
+    delete: {
+      tags: ["Users"],
+      summary: "Deletes a user with an id",
+      parameters: [
+        {
+          in: "path",
+          name: "id",
+          required: true,
+          schema: {
+            type: "integer",
+            minimum: 1,
+          },
+          description: "ID of the user to delete",
+        },
+      ],
+    }
   },
 };

@@ -50,4 +50,31 @@ export default {
       },
     },
   },
+  "UserInput": {
+    properties: {
+      firstname: { type: "string" },
+      lastname: { type: "string" },
+      user_meta: {
+        $ref: "#/components/schemas/UserMeta",
+      },
+      role: {
+        $ref: "#/components/schemas/Role",
+      },
+      interests: {
+        $ref: "#/components/schemas/Interest",
+      },
+    },
+    example: {
+      firstname: "John",
+      lastname: "Doe",
+      user_meta: {
+        address: "123 Main St",
+        zipCode: "12345",
+        city: "New York",
+      },
+      role: {
+        name: "admin",
+      },
+    },
+  }
 };
