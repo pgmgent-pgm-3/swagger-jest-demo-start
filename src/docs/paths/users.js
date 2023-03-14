@@ -13,8 +13,8 @@ export default {
       tags: ["Users"],
       summary: "Create a new user",
       requestBody: {
+        required: true,
         content: {
-          required: true,
           "application/json": {
             schema: {
               $ref: "#/components/schemas/User",
