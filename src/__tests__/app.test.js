@@ -1,5 +1,6 @@
 import DataSource from '../lib/DataSource.js';
 import app from '../app.js';
+import request from "supertest";
 
 let server;
 
@@ -25,8 +26,10 @@ describe("Interests API tests", () => {
   });
 
   describe("Testing HTTP methods", () => {
-    test("GET - /api/interest", () => {
-      expect(1).toBe(1);
+    test("GET - /api/interests", async () => {
+      const response = await request(app).get("/api/interests");
+      expect(response.statusCode).toBe(200);
+      expect(Array.isArray(response.body)).toBeTruthy();
     })
   })
 })
