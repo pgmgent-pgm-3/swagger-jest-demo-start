@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1679040374683" clover="3.2.0">
-  <project timestamp="1679040374684" name="All files">
-    <metrics statements="146" coveredstatements="56" conditionals="26" coveredconditionals="5" methods="25" coveredmethods="6" elements="197" coveredelements="67" complexity="0" loc="146" ncloc="146" packages="9" files="23" classes="23"/>
+<coverage generated="1679042025749" clover="3.2.0">
+  <project timestamp="1679042025749" name="All files">
+    <metrics statements="146" coveredstatements="61" conditionals="26" coveredconditionals="5" methods="25" coveredmethods="7" elements="197" coveredelements="73" complexity="0" loc="146" ncloc="146" packages="9" files="23" classes="23"/>
     <package name="src">
       <metrics statements="30" coveredstatements="23" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="0"/>
       <file name="app.js" path="C:\Users\janne\Documents\Artevelde\pgm-3\swagger-jest-demo-start\src\app.js">
@@ -60,15 +60,15 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="home.js" path="C:\Users\janne\Documents\Artevelde\pgm-3\swagger-jest-demo-start\src\controllers\home.js">
-        <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.controllers.api">
