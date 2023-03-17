@@ -1,6 +1,7 @@
 import DataSource from '../lib/DataSource.js';
 import app from '../app.js';
 import request from "supertest";
+import jest from "jest";
 
 let server;
 
@@ -57,9 +58,28 @@ describe("Interests API tests", () => {
 
     // veel succes!
 
-    test("POST - /api/user", () => {
-
+    test("POST - /api/user", async () => {
+      // post request verzenden
+      const response = await request(app)
+        .post("/api/users")
+        .send({
+          firstname: "Frederick",
+          lastname: "Roegiers",
+          user_meta: {
+            address: "Invalidenstraat 6",	
+            zipCode: "9041",
+            city: "Oostakker",
+          },
+          role: {
+            name: "admin",
+          },
+        });
+        // controleren op statuscode
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toHaveProperty("id");
+      
     });
 
   })
 })
+
